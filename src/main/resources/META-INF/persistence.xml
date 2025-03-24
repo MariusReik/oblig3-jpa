@@ -4,15 +4,15 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
     <persistence-unit name="firmaPU" transaction-type="RESOURCE_LOCAL">
-        <class>no.hvl.dat107.entity.Ansatt</class>
-        <class>no.hvl.dat107.entity.Avdeling</class>
-        <class>no.hvl.dat107.entity.Prosjekt</class>
-        <class>no.hvl.dat107.entity.ProsjektDeltakelse</class>
+        <class>main.java.entity.Ansatt</class>
+        <class>main.java.entity.Avdeling</class>
+        <class>main.java.entity.Prosjekt</class>
+        <class>main.java.entity.ProsjektDeltakelse</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ider-database.westeurope.cloudapp.azure.com:5433/yourusername_oblig3" />
-            <property name="javax.persistence.jdbc.user" value="yourusername" />
-            <property name="javax.persistence.jdbc.password" value="yourpassword" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ider-database.westeurope.cloudapp.azure.com:5433/h591443_oblig3" />
+            <property name="javax.persistence.jdbc.user" value="h591443" />
+            <property name="javax.persistence.jdbc.password" value="pass" /> 
             
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect" />
             <property name="hibernate.show_sql" value="true" />

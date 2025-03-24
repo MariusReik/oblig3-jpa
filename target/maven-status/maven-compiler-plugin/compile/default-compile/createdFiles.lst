@@ -1,0 +1,8 @@
+main\java\dao\AnsattDAO.class
+main\java\entity\Avdeling.class
+main\java\entity\ProsjektDeltakelse.class
+main\java\entity\Ansatt.class
+main\java\Main.class
+main\java\dao\ProsjektDAO.class
+main\java\entity\Prosjekt.class
+main\java\dao\AvdelingDAO.class

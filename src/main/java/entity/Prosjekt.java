@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "yourusername_oblig3", name = "prosjekt")
+@Table(schema = "h591443_oblig3", name = "prosjekt")
 public class Prosjekt {
     
     @Id

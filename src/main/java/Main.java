@@ -1,4 +1,4 @@
-package no.hvl.dat107;
+package main.java;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

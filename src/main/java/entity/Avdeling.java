@@ -1,6 +1,5 @@
 package main.java.entity;
 
-    
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -13,7 +12,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "yourusername_oblig3", name = "avdeling")
+@Table(schema = "h591443_oblig3", name = "avdeling")
 public class Avdeling {
     
     @Id
