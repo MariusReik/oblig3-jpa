@@ -1,4 +1,4 @@
-package main.java.dao;
+package dao;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import main.java.entity.Ansatt;
-import main.java.entity.Avdeling;
+import entity.Ansatt;
+import entity.Avdeling;
 
 public class AvdelingDAO {
 

@@ -1,4 +1,4 @@
-package main.java;
+package main;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -9,13 +9,13 @@ import java.util.Scanner;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import main.java.dao.AnsattDAO;
-import main.java.dao.AvdelingDAO;
-import main.java.dao.ProsjektDAO;
-import main.java.entity.Ansatt;
-import main.java.entity.Avdeling;
-import main.java.entity.Prosjekt;
-import main.java.entity.ProsjektDeltakelse;
+import dao.AnsattDAO;
+import dao.AvdelingDAO;
+import dao.ProsjektDAO;
+import entity.Ansatt;
+import entity.Avdeling;
+import entity.Prosjekt;
+import entity.ProsjektDeltakelse;
 
 public class Main {
     

@@ -1,4 +1,4 @@
-package main.java.dao;
+package dao;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import main.java.entity.Ansatt;
-import main.java.entity.Prosjekt;
-import main.java.entity.ProsjektDeltakelse;
+import entity.Ansatt;
+import entity.Prosjekt;
+import entity.ProsjektDeltakelse;
 
 public class ProsjektDAO {
 
