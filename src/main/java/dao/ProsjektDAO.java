@@ -22,7 +22,13 @@ public class ProsjektDAO {
     public Prosjekt finnProsjektMedId(int id) {
         EntityManager em = emf.createEntityManager();
         try {
-            return em.find(Prosjekt.class, id);
+            TypedQuery<Prosjekt> query = em.createQuery(
+                "SELECT p FROM Prosjekt p LEFT JOIN FETCH p.deltagelser pd LEFT JOIN FETCH pd.ansatt WHERE p.id = :id", 
+                Prosjekt.class);
+            query.setParameter("id", id);
+            return query.getSingleResult();
+        } catch (Exception e) {
+            return null;
         } finally {
             em.close();
         }

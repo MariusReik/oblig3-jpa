@@ -21,7 +21,13 @@ public class AvdelingDAO {
     public Avdeling finnAvdelingMedId(int id) {
         EntityManager em = emf.createEntityManager();
         try {
-            return em.find(Avdeling.class, id);
+            TypedQuery<Avdeling> query = em.createQuery(
+                "SELECT a FROM Avdeling a LEFT JOIN FETCH a.ansatte LEFT JOIN FETCH a.sjef WHERE a.id = :id",
+                Avdeling.class);
+            query.setParameter("id", id);
+            return query.getSingleResult();
+        } catch (Exception e) {
+            return null;
         } finally {
             em.close();
         }
@@ -69,7 +75,8 @@ public class AvdelingDAO {
         EntityManager em = emf.createEntityManager();
         try {
             TypedQuery<Ansatt> query = em.createQuery(
-                    "SELECT a FROM Ansatt a WHERE a.avdeling.id = :avdelingId", Ansatt.class);
+                    "SELECT a FROM Ansatt a LEFT JOIN FETCH a.prosjektdeltagelser WHERE a.avdeling.id = :avdelingId", 
+                    Ansatt.class);
             query.setParameter("avdelingId", avdelingId);
             return query.getResultList();
         } finally {

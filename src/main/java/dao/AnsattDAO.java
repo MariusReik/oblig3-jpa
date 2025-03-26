@@ -22,7 +22,16 @@ public class AnsattDAO {
     public Ansatt finnAnsattMedId(int id) {
         EntityManager em = emf.createEntityManager();
         try {
-            return em.find(Ansatt.class, id);
+            // Create a query that eagerly fetches the project participations
+            TypedQuery<Ansatt> query = em.createQuery(
+                "SELECT a FROM Ansatt a LEFT JOIN FETCH a.prosjektdeltagelser WHERE a.id = :id", 
+                Ansatt.class);
+            query.setParameter("id", id);
+            
+            Ansatt ansatt = query.getSingleResult();
+            return ansatt;
+        } catch (NoResultException e) {
+            return null;
         } finally {
             em.close();
         }
@@ -32,7 +41,8 @@ public class AnsattDAO {
         EntityManager em = emf.createEntityManager();
         try {
             TypedQuery<Ansatt> query = em.createQuery(
-                    "SELECT a FROM Ansatt a WHERE a.brukernavn = :brukernavn", Ansatt.class);
+                    "SELECT a FROM Ansatt a LEFT JOIN FETCH a.prosjektdeltagelser WHERE a.brukernavn = :brukernavn", 
+                    Ansatt.class);
             query.setParameter("brukernavn", brukernavn);
             return query.getSingleResult();
         } catch (NoResultException e) {
